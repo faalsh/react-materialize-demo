@@ -1,5 +1,5 @@
 import React from 'react'
-import NavLink from '../NavLink/NavLink.jsx'
+import NavLink from '../../components/NavLink/NavLink.jsx'
 import './Repos.css'
 
 export default class extends React.Component {
