@@ -1,13 +1,16 @@
+import * as types from './actionTypes';
+
+
 export function changeEmpName(name){
 	return {
-		type: "EMP_CHANGE_NAME",
+		type: types.EMP_CHANGE_NAME,
 		payload: name
 	}
 }
 
 export function changeEmpAge(age){
 	return {
-		type: "EMP_CHANGE_AGE",
+		type: types.EMP_CHANGE_AGE,
 		payload: age
 	}
 }

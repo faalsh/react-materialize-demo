@@ -1,0 +1,275 @@
+{
+  "data": {
+    "rounds": [
+      {
+        "identifier": "xrycvtrpkjgjy1wsv4zcrekxobjcbjbw",
+        "name": "Giornata 1",
+        "start_date": "2016-08-13T13:30:00+0200",
+        "end_date": "2016-08-15T21:00:00+0200",
+        "round_slug": "giornata-1"
+      },
+      {
+        "identifier": "eojaket4ktmrl3fz0alja0vhfio3kjgr",
+        "name": "Giornata 2",
+        "start_date": "2016-08-19T21:00:00+0200",
+        "end_date": "2016-08-21T17:00:00+0200",
+        "round_slug": "giornata-2"
+      },
+      {
+        "identifier": "0ca80txjp6qpndtjnvu8bhwztjcbybde",
+        "name": "Giornata 3",
+        "start_date": "2016-08-27T13:30:00+0200",
+        "end_date": "2016-08-28T17:00:00+0200",
+        "round_slug": "giornata-3"
+      },
+      {
+        "identifier": "xmdnabsc2zgjtvyz03kvmvjwdokjxfip",
+        "name": "Giornata 4",
+        "start_date": "2016-09-10T13:30:00+0200",
+        "end_date": "2016-09-12T21:00:00+0200",
+        "round_slug": "giornata-4"
+      },
+      {
+        "identifier": "dausmjkrpmrwzjs9rrl496pemttrxqca",
+        "name": "Giornata 5",
+        "start_date": "2016-09-16T21:00:00+0200",
+        "end_date": "2016-09-18T17:30:00+0200",
+        "round_slug": "giornata-5"
+      },
+      {
+        "identifier": "0kwz4qew5rqaqzqyz1vnxjqfmudbv8dy",
+        "name": "Giornata 6",
+        "start_date": "2016-09-24T13:30:00+0200",
+        "end_date": "2016-09-26T21:00:00+0200",
+        "round_slug": "giornata-6"
+      },
+      {
+        "identifier": "cr8en7wcmqgrrp1teuxgtizxj0kardr8",
+        "name": "Giornata 7",
+        "start_date": "2016-10-01T16:00:00+0200",
+        "end_date": "2016-10-01T16:00:00+0200",
+        "round_slug": "giornata-7"
+      },
+      {
+        "identifier": "bffqzx8yypit85wlznkzqq0veeixl9bd",
+        "name": "Giornata 8",
+        "start_date": "2016-10-15T16:00:00+0200",
+        "end_date": "2016-10-15T16:00:00+0200",
+        "round_slug": "giornata-8"
+      },
+      {
+        "identifier": "ksnu6q4qo4qzhhpk5xhaim7ykg20cvfj",
+        "name": "Giornata 9",
+        "start_date": "2016-10-22T16:00:00+0200",
+        "end_date": "2016-10-22T16:00:00+0200",
+        "round_slug": "giornata-9"
+      },
+      {
+        "identifier": "welxfmnfymmgvj7qvw6ziq43fa12pybh",
+        "name": "Giornata 10",
+        "start_date": "2016-10-29T16:00:00+0200",
+        "end_date": "2016-10-29T16:00:00+0200",
+        "round_slug": "giornata-10"
+      },
+      {
+        "identifier": "fs6lbrsntaepcakrgroih56ytksyxltm",
+        "name": "Giornata 11",
+        "start_date": "2016-11-05T16:00:00+0100",
+        "end_date": "2016-11-05T16:00:00+0100",
+        "round_slug": "giornata-11"
+      },
+      {
+        "identifier": "kyukbxodefgfvd51ycqsdynmkifdgwmq",
+        "name": "Giornata 12",
+        "start_date": "2016-11-19T16:00:00+0100",
+        "end_date": "2016-11-19T16:00:00+0100",
+        "round_slug": "giornata-12"
+      },
+      {
+        "identifier": "pxcfgxjqrjvqszbkfp8nunqft5z36mwx",
+        "name": "Giornata 13",
+        "start_date": "2016-11-26T16:00:00+0100",
+        "end_date": "2016-11-26T16:00:00+0100",
+        "round_slug": "giornata-13"
+      },
+      {
+        "identifier": "aefaby05vfeu404ijcizy4qzx8pkc9qr",
+        "name": "Giornata 14",
+        "start_date": "2016-12-03T16:00:00+0100",
+        "end_date": "2016-12-03T16:00:00+0100",
+        "round_slug": "giornata-14"
+      },
+      {
+        "identifier": "tzp0vit44x2nk0iu0ulingkvts2mmxes",
+        "name": "Giornata 15",
+        "start_date": "2016-12-10T16:00:00+0100",
+        "end_date": "2016-12-11T16:00:00+0100",
+        "round_slug": "giornata-15"
+      },
+      {
+        "identifier": "k6hflyjv5phxfjkfceb2nsgqajqvsdio",
+        "name": "Giornata 16",
+        "start_date": "2016-12-13T20:45:00+0100",
+        "end_date": "2016-12-14T22:00:00+0100",
+        "round_slug": "giornata-16"
+      },
+      {
+        "identifier": "ouy6h4otndl15s6tqetlfaiigbz9emdc",
+        "name": "Giornata 17",
+        "start_date": "2016-12-17T16:00:00+0100",
+        "end_date": "2016-12-17T16:00:00+0100",
+        "round_slug": "giornata-17"
+      },
+      {
+        "identifier": "eucjz65wgzynxlycwkcmr1ia7ozanllq",
+        "name": "Giornata 18",
+        "start_date": "2016-12-26T16:00:00+0100",
+        "end_date": "2016-12-26T16:00:00+0100",
+        "round_slug": "giornata-18"
+      },
+      {
+        "identifier": "ea0m6l6welwyvmirbj8bg18nd3woqolq",
+        "name": "Giornata 19",
+        "start_date": "2016-12-31T16:00:00+0100",
+        "end_date": "2016-12-31T16:00:00+0100",
+        "round_slug": "giornata-19"
+      },
+      {
+        "identifier": "nb1ymas0ki1cnf6zkk5ciuyrr3q6dekb",
+        "name": "Giornata 20",
+        "start_date": "2017-01-02T16:00:00+0100",
+        "end_date": "2017-01-02T16:00:00+0100",
+        "round_slug": "giornata-20"
+      },
+      {
+        "identifier": "qydijxqqesotiu0wyu2zhojgrjr6vcqh",
+        "name": "Giornata 21",
+        "start_date": "2017-01-14T16:00:00+0100",
+        "end_date": "2017-01-14T16:00:00+0100",
+        "round_slug": "giornata-21"
+      },
+      {
+        "identifier": "bgsuctsmaqpfjlwpma5d9msezst24hln",
+        "name": "Giornata 22",
+        "start_date": "2017-01-21T16:00:00+0100",
+        "end_date": "2017-01-21T16:00:00+0100",
+        "round_slug": "giornata-22"
+      },
+      {
+        "identifier": "khjzi9rgs8rnmrh7wc6c8vprwel0u8ea",
+        "name": "Giornata 23",
+        "start_date": "2017-01-31T20:45:00+0100",
+        "end_date": "2017-02-01T22:00:00+0100",
+        "round_slug": "giornata-23"
+      },
+      {
+        "identifier": "yutvyrgvpei10aw2ya94ubwot5zgsgld",
+        "name": "Giornata 24",
+        "start_date": "2017-02-04T16:00:00+0100",
+        "end_date": "2017-02-04T16:00:00+0100",
+        "round_slug": "giornata-24"
+      },
+      {
+        "identifier": "bgsnvi3kdr9dzlgyuqpnr4dir19mjzi9",
+        "name": "Giornata 25",
+        "start_date": "2017-02-11T16:00:00+0100",
+        "end_date": "2017-02-11T16:00:00+0100",
+        "round_slug": "giornata-25"
+      },
+      {
+        "identifier": "mpg4vzsyuzcsntd8wmzzjtgonnmnbamq",
+        "name": "Giornata 26",
+        "start_date": "2017-02-25T16:00:00+0100",
+        "end_date": "2017-02-25T16:00:00+0100",
+        "round_slug": "giornata-26"
+      },
+      {
+        "identifier": "rbwdxr1h2oo2uvhrt33vuwju6uxoo4b4",
+        "name": "Giornata 27",
+        "start_date": "2017-03-04T16:00:00+0100",
+        "end_date": "2017-03-04T16:00:00+0100",
+        "round_slug": "giornata-27"
+      },
+      {
+        "identifier": "mcdsrddijs9qmiulfowtrpqowl2ofo1f",
+        "name": "Giornata 28",
+        "start_date": "2017-03-11T16:00:00+0100",
+        "end_date": "2017-03-11T16:00:00+0100",
+        "round_slug": "giornata-28"
+      },
+      {
+        "identifier": "cmhnitzqgapepmui8qg4smzsuqvkhz8k",
+        "name": "Giornata 29",
+        "start_date": "2017-03-18T16:00:00+0100",
+        "end_date": "2017-03-18T16:00:00+0100",
+        "round_slug": "giornata-29"
+      },
+      {
+        "identifier": "wf95gyorzwld22hv2b20lwbicqmgl6bs",
+        "name": "Giornata 30",
+        "start_date": "2017-04-01T16:00:00+0200",
+        "end_date": "2017-04-01T16:00:00+0200",
+        "round_slug": "giornata-30"
+      },
+      {
+        "identifier": "wmmfyw9obgvc5igmvdpakeupn6j6jcf1",
+        "name": "Giornata 31",
+        "start_date": "2017-04-04T20:45:00+0200",
+        "end_date": "2017-04-05T21:00:00+0200",
+        "round_slug": "giornata-31"
+      },
+      {
+        "identifier": "u3mawk7jrpgykhereudploo9natollz8",
+        "name": "Giornata 32",
+        "start_date": "2017-04-08T16:00:00+0200",
+        "end_date": "2017-04-08T16:00:00+0200",
+        "round_slug": "giornata-32"
+      },
+      {
+        "identifier": "hzisnhqtte2dkqc7q8phbgmzbbzrbmxj",
+        "name": "Giornata 33",
+        "start_date": "2017-04-15T16:00:00+0200",
+        "end_date": "2017-04-16T18:00:00+0200",
+        "round_slug": "giornata-33"
+      },
+      {
+        "identifier": "lyuunftp9tvvx3moijka5eecyqtt0zzg",
+        "name": "Giornata 34",
+        "start_date": "2017-04-22T16:00:00+0200",
+        "end_date": "2017-04-22T16:00:00+0200",
+        "round_slug": "giornata-34"
+      },
+      {
+        "identifier": "odj0mpfzncxewd34zfsceeefhi0olomf",
+        "name": "Giornata 35",
+        "start_date": "2017-04-29T16:00:00+0200",
+        "end_date": "2017-04-29T16:00:00+0200",
+        "round_slug": "giornata-35"
+      },
+      {
+        "identifier": "zct1fwwt0vgm0qsnxnxtsv5i7lao7inh",
+        "name": "Giornata 36",
+        "start_date": "2017-05-06T16:00:00+0200",
+        "end_date": "2017-05-06T16:00:00+0200",
+        "round_slug": "giornata-36"
+      },
+      {
+        "identifier": "tq4a4u8k2zhliqipbylxxmeotcjzoagj",
+        "name": "Giornata 37",
+        "start_date": "2017-05-13T16:00:00+0200",
+        "end_date": "2017-05-13T16:00:00+0200",
+        "round_slug": "giornata-37"
+      },
+      {
+        "identifier": "m12oe8sblyyxviekmdbndbmsm4c7g3km",
+        "name": "Giornata 38",
+        "start_date": "2017-05-21T16:00:00+0200",
+        "end_date": "2017-05-21T16:00:00+0200",
+        "round_slug": "giornata-38"
+      }
+    ],
+    "statusCode": "200",
+    "errorCode": "0",
+    "statusReason": "OK"
+  }
+}
