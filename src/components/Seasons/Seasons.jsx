@@ -54,8 +54,6 @@ class Seasons extends React.Component {
     }
 }
 
-export default Seasons;
-
 
 function mapStateToProps(state){
 	return {

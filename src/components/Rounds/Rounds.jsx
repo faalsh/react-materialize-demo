@@ -51,9 +51,6 @@ class Rounds extends React.Component {
     }
 }
 
-export default Rounds;
-
-
 function mapStateToProps(state){
 	return {
         round: state.round,
