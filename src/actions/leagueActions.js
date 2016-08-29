@@ -23,6 +23,7 @@ export function fetchSeasons(league){
 	return {
 
 		type: types.FETCH_SEASONS,
+		meta: {league:league},
 		payload: axios.get("https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/"+league+"/seasons", config)
 	}
 }
@@ -34,6 +35,7 @@ export function fetchRounds(league, season){
 	return {
 
 		type: types.FETCH_ROUNDS,
+		meta: {league: league, season:season},
 		payload: axios.get("https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/"+league+"/seasons/"+season+"/rounds", config)
 	}
 }

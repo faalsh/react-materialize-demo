@@ -1,6 +1,7 @@
 import React from 'react';
 import NavLink from '../../components/NavLink/NavLink.jsx'
 import './DropDown.css'
+import classNames from 'classnames'
 
 class DropDown extends React.Component {
 
@@ -14,13 +15,24 @@ class DropDown extends React.Component {
               belowOrigin: false, // Displays dropdown below the button
               alignment: 'left' // Displays dropdown with edge aligned to the left of button
                 })  
-    } 
+    }
+
+
     
     render() {
+
+
+      var className = classNames({
+        'dropdown-button': true,
+        'btn': true,
+        'lighten-1': true,
+        'orange': this.props.items.length > 0,
+        'grey': this.props.items.length == 0
+      })
         return (
         	 <span>
 
-				<a className='dropdown-button btn orange lighten-1' href='#' data-activates={this.props.id} data-constrainwidth="false">{this.props.name}</a>
+				<a className={className} href='#' data-activates={this.props.id} data-constrainwidth="false">{this.props.name}</a>
 
 				<ul id={this.props.id} className='dropdown-content'> 
 
@@ -28,7 +40,7 @@ class DropDown extends React.Component {
 				{
 				this.props.items.map((item)=>
 					<div>
-						<li ><NavLink to={item.to} className="orange-text"> {item.name}</NavLink></li>
+						<li ><NavLink onClick={this.props.onClick} to={item.to} className="orange-text"> {item.name}</NavLink></li>
 						<li className="divider"></li>
 					</div>
 				)}
