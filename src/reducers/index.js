@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux'
 
-import emp from './empReducer'
-import user from './userReducer'
+import season from './seasonReducer'
+import league from './leagueReducer'
+import round from './roundReducer'
+
 
 export default combineReducers({
-	emp,user
+	season,league, round
 })

@@ -17,7 +17,7 @@ export default class extends React.Component {
       return (
         <div>
           <nav>
-            <div className="nav-wrapper">
+            <div className="blue nav-wrapper">
               <NavLink to="/" className="right brand-logo">React Demo</NavLink>
               <a href="#" data-activates="mobile-demo" className="button-collapse"><i className="material-icons">menu</i></a>
               <ul id="nav-mobile" className="left hide-on-med-and-down">

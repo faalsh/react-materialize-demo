@@ -1,28 +1,66 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {changeUserName, toggle, changeUserAge} from '../../actions/userActions'
-
+import {fetchLeagues} from '../../actions/leagueActions'
+import Spinner from '../../components/Spinner/Spinner.jsx'
+import DropDown from '../../components/DropDown/DropDown.jsx'
+import './About.css'
 
 class About extends React.Component {
 
 
-	
+
+    componentWillMount() {
+      this.props.fetchLeagues() 
+    }
+
+    renderFetching(){
+
+        if(this.props.fetching) {
+            
+            return <Spinner />;
+
+        } 
+
+    }
+
+    getLeagues() {
+
+        var items = [];
+
+        this.props.league.leagues.map((league) => {
+            items.push({name:league.name, to:"/about/"+league.league_slug});
+        })
+
+        return items;
+
+    } 
+
+    componentWillReceiveProps(nextProps) {
+        console.log("about componentWillReceiveProps")
+        console.log(nextProps)  
+    }
+
 
 	render() {
+
     return (
-    		<div>
-    		    <input type="input" onChange={(e) => this.props.setName(e.target.value)} defaultValue={this.props.name}/>
-    			<input type="button" onClick={() => this.props.toggle()} value="toggle"/>
-    			<input type="button" onClick={() => this.props.random(Math.random())} value="random"/>
-    			<div>
-    				<ul>
-    					<li>{this.props.name}</li>
-    					<li>{this.props.age}</li> 
-    					<li>{this.props.toggled? 'true':'false'}</li>
-    				</ul>
-    			</div>
+
+    		<div className="row">
+                {
+                     this.renderFetching()
+                 }
+
+                <div className="col s12 filters">
+                    <DropDown id="leagues" name="Leagues" items={this.getLeagues()} />
+                    {
+
+                        this.props.children
+                    }
+                </div>
+
     		</div>
+
     	)
   }
 
@@ -31,17 +69,14 @@ class About extends React.Component {
 
 function mapStateToProps(state){
 	return {
-		name: state.user.name,
-		age: state.user.age,
-		toggled: state.user.toggled
+        fetching: state.league.fetching || state.season.fetching,
+        league: state.league,
 	}
 }
 
 function matchDispatchToProps(dispatch){
 	return bindActionCreators({
-			setName: changeUserName,
-			toggle: toggle,
-			random: changeUserAge
+            fetchLeagues: fetchLeagues,
 		}, dispatch);
 }
 
