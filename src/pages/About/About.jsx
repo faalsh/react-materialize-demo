@@ -1,11 +1,19 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
-import {changeUserName, toggle, changeUserAge, fetchUser, fetchLeagues} from '../../actions/userActions'
+import {fetchLeagues} from '../../actions/leagueActions'
 import Spinner from '../../components/Spinner/Spinner.jsx'
-import NavLink from '../../components/NavLink/NavLink.jsx'
+import DropDown from '../../components/DropDown/DropDown.jsx'
 
 class About extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+
+            items: [{to:'test', name:'Test'}]
+        };
+    }
 
     renderFetching(){
 
@@ -40,32 +48,35 @@ class About extends React.Component {
 
     }
 
+    getLeagues() {
+
+        var items = [];
+
+        this.props.league.leagues.map((league) => {
+            items.push({name:league.name, to:league.league_slug});
+        })
+
+        return items;
+
+    } 
+
+      
+
 
 	render() {
 
     return (
     		<div>
-    		    <input type="input" onChange={(e) => this.props.setName(e.target.value)} defaultValue={this.props.name}/>
-    			<input type="button" onClick={() => this.props.toggle()} value="toggle"/>
-    			<input type="button" onClick={() => this.props.random(Math.random())} value="random"/>
-                <input type="button" onClick={() => this.props.fetchUser()} value="Fetch Users"/>
-                <input type="button" onClick={() => this.props.fetchLeagues()} value="Fetch Leagues"/>
-    			<div>
-    				<ul>
-    					<li>{this.props.name}</li>
-    					<li>{this.props.age}</li> 
-    					<li>{this.props.toggled? 'true':'false'}</li>
-    				</ul>
-    			</div>
-                {
-                    this.renderFetching()
-                }
+                
                 <div>
-                {this.props.leagues.map((league)=>
+                    <input type="button" onClick={() => this.props.fetchLeagues()} value="Fetch Leagues"/>
+                </div>
 
-                         <div><NavLink to={league.league_slug}>{league.nation}: {league.name}</NavLink></div>
-                    )}
-            </div>
+                <DropDown id="leagues" name="Leagues" parentLocation={this.props.location.pathname} items={this.getLeagues()} />
+                {
+
+                    this.props.children
+                }
 
     		</div>
 
@@ -77,24 +88,16 @@ class About extends React.Component {
 
 function mapStateToProps(state){
 	return {
-		name: state.user.name,
-		age: state.user.age,
-		toggled: state.user.toggled,
-        fetching: state.user.fetching,
-        fetched: state.user.fetched,
-        error: state.user.error,
-        leagues: state.user.leagues,
+
+        league: state.league,
+        season: state.season,
 
 	}
 }
 
 function matchDispatchToProps(dispatch){
 	return bindActionCreators({
-			setName: changeUserName,
-			toggle: toggle,
-			random: changeUserAge,
-            fetchUser: fetchUser,
-            fetchLeagues: fetchLeagues
+            fetchLeagues: fetchLeagues,
 		}, dispatch);
 }
 
