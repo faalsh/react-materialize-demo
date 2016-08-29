@@ -10,6 +10,7 @@ import About from './pages/About/About.jsx'
 import Repos from './pages/Repos/Repos.jsx'
 import Repo from './components/Repo/Repo.jsx'
 import Seasons from './components/Seasons/Seasons.jsx'
+import {fetchSeasons} from './actions/leagueActions';
 
 import Home from './pages/Home/Home.jsx'
 import './index.css'
@@ -19,6 +20,11 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 
+const leagueSelected = (nextState, replace, callback) => {
+
+  // disptach(fetchSeasons(nextState.params.league))
+
+}
 
 
 render((
@@ -33,7 +39,7 @@ render((
         <Route path="/repos/:userName/:repoName" component={Repo}/>
       </Route>
       <Route path="/about" component={About}>
-        <Route path="/about/:league" component={Seasons}/>
+        <Route path=":league" component={Seasons}/>
       </Route>
     </Route>
   </Router>

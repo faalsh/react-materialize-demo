@@ -21,27 +21,6 @@ class About extends React.Component {
             
             return <Spinner />;
 
-            // return (
-            //         <div className="progress">
-            //           <div className="indeterminate"></div>
-            //       </div>
-            // )
-
-            // return (
-            //     <div className="preloader-wrapper big active">
-            //         <div className="spinner-layer spinner-blue">
-            //             <div className="circle-clipper left">
-            //               <div className="circle" />
-            //             </div>
-            //             <div className="gap-patch">
-            //               <div className="circle" />
-            //             </div>
-            //             <div className="circle-clipper right">
-            //               <div className="circle" />
-            //             </div>
-            //         </div>
-            //     </div>
-            // )
         } else if (this.props.fetched){
             return <div>fetched</div>;
         }
@@ -60,7 +39,10 @@ class About extends React.Component {
 
     } 
 
-      
+    componentWillReceiveProps(nextProps) {
+        console.log("about componentWillReceiveProps")
+        console.log(nextProps)  
+    }
 
 
 	render() {
@@ -90,8 +72,6 @@ function mapStateToProps(state){
 	return {
 
         league: state.league,
-        season: state.season,
-
 	}
 }
 

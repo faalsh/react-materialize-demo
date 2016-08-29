@@ -9,9 +9,14 @@ import {fetchSeasons} from '../../actions/leagueActions'
 
 class Seasons extends React.Component {
 
-	componentDidMount() {
-	    this.props.fetchSeasons(this.props.params.league)  
-	}
+	// componentDidMount() {
+	//     this.props.fetchSeasons(this.props.params.league)  
+	// }
+
+	componentWillReceiveProps(nextProps) {
+        console.log("seasons componentWillReceiveProps")
+        console.log(nextProps)            
+    }
 
     getSeasons() {
 
@@ -26,6 +31,8 @@ class Seasons extends React.Component {
 	} 
     
     render() {
+
+    	// console.log(this.props)
 
         return <DropDown id="seasons" name="Seasons" parentLocation={this.props.location.pathname} items={this.getSeasons()} />;
     }
