@@ -27,7 +27,7 @@ injectTapEventPlugin();
 
 render((
 <Provider store={store} >
-  <Router history={browserHistory}>
+  <Router history={browserHistory}> 
     <Route path="/ui" component={LayoutUI} />
     <Route path="/" component={Layout}>
       
@@ -39,7 +39,7 @@ render((
       
       <Route path="/about" component={About}>
         <Route path=":league" component={Seasons}>
-          <Route path=":round" component={Rounds} />
+          <Route path=":season" component={Rounds} />
         </Route>
       </Route>
 

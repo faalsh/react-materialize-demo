@@ -10,7 +10,8 @@ import {fetchRounds} from '../../actions/leagueActions'
 class Rounds extends React.Component {
 
 	componentWillMount() {
-	  // this.props.fetchRounds(this.props.params.league)    
+		console.log("rounds will mount", this.props)
+	  this.props.fetchRounds(this.props.params.league, this.props.params.season)    
 	}
 
 
@@ -31,7 +32,7 @@ class Rounds extends React.Component {
 	    var items = [];
 
 	    this.props.round.rounds.map((round) => {
-	        items.push({name:round.name, to:this.props.params.league+"/"+this.props.params.season+"/"+round.round_slug});
+	        items.push({name:round.name, to:this.props.params.season+"/"+round.round_slug});
 	    })
 
 	    return items;

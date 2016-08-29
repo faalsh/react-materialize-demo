@@ -20,7 +20,7 @@ class DropDown extends React.Component {
         return (
         	 <span>
 
-				<a className='dropdown-button btn blue lighten-1' href='#' data-activates={this.props.id} data-constrainwidth="false">{this.props.name}</a>
+				<a className='dropdown-button btn orange lighten-1' href='#' data-activates={this.props.id} data-constrainwidth="false">{this.props.name}</a>
 
 				<ul id={this.props.id} className='dropdown-content'> 
 
@@ -28,7 +28,7 @@ class DropDown extends React.Component {
 				{
 				this.props.items.map((item)=>
 					<div>
-						<li ><NavLink to={item.to} className="blue-text"> {item.name}</NavLink></li>
+						<li ><NavLink to={item.to} className="orange-text"> {item.name}</NavLink></li>
 						<li className="divider"></li>
 					</div>
 				)}

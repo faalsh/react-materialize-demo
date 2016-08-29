@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux'
 import {fetchLeagues} from '../../actions/leagueActions'
 import Spinner from '../../components/Spinner/Spinner.jsx'
 import DropDown from '../../components/DropDown/DropDown.jsx'
+import './About.css'
 
 class About extends React.Component {
 
@@ -45,16 +46,18 @@ class About extends React.Component {
 
     return (
 
-    		<div>
+    		<div className="row">
                 {
                      this.renderFetching()
                  }
 
-                <DropDown id="leagues" name="Leagues" items={this.getLeagues()} />
-                {
+                <div className="col s12 filters">
+                    <DropDown id="leagues" name="Leagues" items={this.getLeagues()} />
+                    {
 
-                    this.props.children
-                }
+                        this.props.children
+                    }
+                </div>
 
     		</div>
 

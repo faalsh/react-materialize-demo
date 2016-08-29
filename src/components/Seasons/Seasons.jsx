@@ -40,7 +40,7 @@ class Seasons extends React.Component {
     
     render() {
 
-    	// console.log(this.props)
+    	console.log("season rendering",this.props)
 
 
         return (
