@@ -7,12 +7,10 @@ import DropDown from '../../components/DropDown/DropDown.jsx'
 
 class About extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
 
-            items: [{to:'test', name:'Test'}]
-        };
+
+    componentWillMount() {
+      this.props.fetchLeagues() 
     }
 
     renderFetching(){
@@ -21,9 +19,7 @@ class About extends React.Component {
             
             return <Spinner />;
 
-        } else if (this.props.fetched){
-            return <div>fetched</div>;
-        }
+        } 
 
     }
 
@@ -32,7 +28,7 @@ class About extends React.Component {
         var items = [];
 
         this.props.league.leagues.map((league) => {
-            items.push({name:league.name, to:league.league_slug});
+            items.push({name:league.name, to:"/about/"+league.league_slug});
         })
 
         return items;
@@ -48,13 +44,13 @@ class About extends React.Component {
 	render() {
 
     return (
-    		<div>
-                
-                <div>
-                    <input type="button" onClick={() => this.props.fetchLeagues()} value="Fetch Leagues"/>
-                </div>
 
-                <DropDown id="leagues" name="Leagues" parentLocation={this.props.location.pathname} items={this.getLeagues()} />
+    		<div>
+                {
+                     this.renderFetching()
+                 }
+
+                <DropDown id="leagues" name="Leagues" items={this.getLeagues()} />
                 {
 
                     this.props.children
@@ -70,7 +66,7 @@ class About extends React.Component {
 
 function mapStateToProps(state){
 	return {
-
+        fetching: state.league.fetching || state.season.fetching,
         league: state.league,
 	}
 }

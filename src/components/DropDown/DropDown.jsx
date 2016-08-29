@@ -28,7 +28,7 @@ class DropDown extends React.Component {
 				{
 				this.props.items.map((item)=>
 					<div>
-						<li ><NavLink to={this.props.parentLocation+"/"+item.to} className="blue-text"> {item.name}</NavLink></li>
+						<li ><NavLink to={item.to} className="blue-text"> {item.name}</NavLink></li>
 						<li className="divider"></li>
 					</div>
 				)}

@@ -9,21 +9,29 @@ import {fetchSeasons} from '../../actions/leagueActions'
 
 class Seasons extends React.Component {
 
-	// componentDidMount() {
-	//     this.props.fetchSeasons(this.props.params.league)  
-	// }
+	componentWillMount() {
+		console.log("season componentWillMount")
+	  this.props.fetchSeasons(this.props.params.league)    
+	}
+
 
 	componentWillReceiveProps(nextProps) {
         console.log("seasons componentWillReceiveProps")
-        console.log(nextProps)            
+        console.log(nextProps) 
+        console.log(this.props.params.league) 
+
+        if(this.props.params.league !== nextProps.params.league) {
+        	this.props.fetchSeasons(nextProps.params.league)
+        }
     }
+    
 
     getSeasons() {
 
 	    var items = [];
 
 	    this.props.season.seasons.map((season) => {
-	        items.push({name:season.name, to:season.season_slug});
+	        items.push({name:season.name, to:this.props.params.league+"/"+season.season_slug});
 	    })
 
 	    return items;
@@ -34,7 +42,15 @@ class Seasons extends React.Component {
 
     	// console.log(this.props)
 
-        return <DropDown id="seasons" name="Seasons" parentLocation={this.props.location.pathname} items={this.getSeasons()} />;
+
+        return (
+        		
+        		<span>
+        			<DropDown id="seasons" name="Seasons" items={this.getSeasons()} />
+        			{this.props.children}
+        		</span>
+
+        )
     }
 }
 

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "tagId": "I2TlMv3VIZmshP2FVfjpAxTAT0Rsp12q4fyjsnQhPbcSmDag1W",
   "scripts": {
     "start": "webpack-dev-server --hot --inline --colors --progress --content-base src/ --history-api-fallback",
     "errors": "webpack --display-error-details"
