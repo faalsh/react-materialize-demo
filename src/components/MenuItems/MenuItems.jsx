@@ -7,8 +7,8 @@ export default class extends React.Component {
         return (
         	<div>
         	<li><NavLink to="/" onlyActiveOnIndex>Home</NavLink></li>
-            <li><NavLink to="/about">About</NavLink></li>
-            <li><NavLink to="/repos">Repos</NavLink></li>
+            <li><NavLink to="/matches">Matches</NavLink></li>
+            <li><NavLink to="/repos">Standings</NavLink></li>
             </div>
 	    )
     }

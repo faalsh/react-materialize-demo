@@ -6,11 +6,10 @@ import store from './store'
 import Layout from './pages/Layout/Layout.jsx'
 import LayoutUI from './pages/Layout/LayoutUI.jsx'
 
-import About from './pages/About/About.jsx'
+import Matches from './pages/Matches/Matches.jsx'
 import Repos from './pages/Repos/Repos.jsx'
 import Repo from './components/Repo/Repo.jsx'
-import Seasons from './components/Seasons/Seasons.jsx'
-import Rounds from './components/Rounds/Rounds.jsx'
+
 
 import {fetchSeasons} from './actions/leagueActions';
 
@@ -37,13 +36,10 @@ render((
         <Route path="/repos/:userName/:repoName" component={Repo}/>
       </Route>
       
-      <Route path="/about" component={About}>
-        <Route path=":league" component={Seasons}>
-          <Route path=":season" component={Rounds} />
-        </Route>
+      <Route path="/matches" component={Matches}>
       </Route>
 
     </Route>
   </Router>
 </Provider>
-), document.getElementById('app'))  
+), document.getElementById('app'))   

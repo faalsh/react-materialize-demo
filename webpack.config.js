@@ -14,11 +14,8 @@ module.exports = {
     loaders: [
       {
         test: /.js?$/,
-        loader: 'babel-loader',
+        loaders: ['react-hot','babel?presets[]=es2015,presets[]=react'],
         exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react']
-        }
       },
       {
         test: /\.html$/,
@@ -27,30 +24,33 @@ module.exports = {
       },
       {
         test: /\.css$/, 
-        loader: "style-loader!css-loader", 
+        loader: "style!css", 
         exclude: /node_modules/
       },
       { 
         test: /\.png$/, 
-        loader: "url-loader?limit=100000",
+        loader: "url?limit=100000",
         exclude: /node_modules/, 
       },
       { 
         test: /\.jpg$/, 
-        loader: "file-loader",
+        loader: "file",
         exclude: /node_modules/,
       },
       {
         test: /\.jsx$/,
-        loader: 'babel-loader',
+        loaders: ['react-hot','babel?presets[]=es2015,presets[]=react'],
         exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react']
-        } 
       },
 
-      { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader:"url?limit=10000&mimetype=application/font-woff" },
-      { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file" },
+      { 
+        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+        loader:"url?limit=10000&mimetype=application/font-woff" 
+      },
+      { 
+        test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, 
+        loader: "file" 
+      },
       { 
         test: /\.json$/, 
         loader: "json-loader",
@@ -67,7 +67,10 @@ module.exports = {
       "window.jQuery": "jquery",
       "root.jQuery": "jquery",
       Hammer: "hammerjs/hammer"
-        })
+        }),
+
+        
+        new webpack.HotModuleReplacementPlugin()
         ]
 };
 

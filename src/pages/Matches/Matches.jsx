@@ -4,21 +4,9 @@ import {bindActionCreators} from 'redux'
 import {fetchLeagues, fetchSeasons, fetchRounds} from '../../actions/leagueActions'
 import Spinner from '../../components/Spinner/Spinner.jsx'
 import DropDown from '../../components/DropDown/DropDown.jsx'
-import './About.css'
+import './Matches.css'
 
-class About extends React.Component {
-
-    // componentWillReceiveProps(nextProps) {
-
-    //     const league = nextProps.location.query.league
-
-    //     console.log(league, this.props.season.league)
-        
-    //     if(league && this.props.season.league !== league) {
-    //         this.props.fetchSeasons(league)
-    //         // console.log('will fetch season')
-    //     } 
-    // }   
+class Matches extends React.Component {
 
     componentWillMount() {
       this.props.fetchLeagues() 
@@ -39,7 +27,7 @@ class About extends React.Component {
         var items = [];
 
         this.props.league.leagues.map((league) => {
-            items.push({name:league.name, to:{pathname: '/about', query: {league: league.league_slug} }});
+            items.push({name:league.name, to:{pathname: '/matches', query: {league: league.league_slug} }});
         })
 
         return items;
@@ -53,7 +41,7 @@ class About extends React.Component {
         var items = [];
 
         this.props.season.seasons.map((season) => {
-            items.push({name:season.name, to:{pathname: '/about', query: {league: league,season: season.season_slug} }});
+            items.push({name:season.name, to:{pathname: '/matches', query: {league: league,season: season.season_slug} }});
         })
 
         return items;
@@ -62,13 +50,14 @@ class About extends React.Component {
 
     getRounds() {
 
+        const league = this.props.location.query.league
+        const season = this.props.location.query.season
 
         var items = [];
 
         this.props.round.rounds.map((round) => {
-            items.push({name:round.name, to:this.props.params.season+"/"+round.round_slug});
+            items.push({name:round.name, to:{pathname: '/matches', query:{league: league, season:season, round:round.round_slug}}});
         })
-
         return items;
 
     } 
@@ -108,24 +97,6 @@ class About extends React.Component {
         }
 
     }
-
-    // handleLeagueSelected(escape){
-        
-
-    //     e.preventDefault()
-
-    //     const league = this.props.location.query.league
-
-    //     fetchSeasons(league)
-
-    // }
-
-    // handleSeasonSelected(e){
-    //     const league = this.props.location.query.league
-
-    //     console.log('season selected', this.props)
-
-    // }
 
 
 	render() {
@@ -174,7 +145,4 @@ function matchDispatchToProps(dispatch){
 }
 
 
-export default connect(mapStateToProps, matchDispatchToProps)(About);
-
-
-
+export default connect(mapStateToProps, matchDispatchToProps)(Matches);
