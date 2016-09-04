@@ -6,7 +6,8 @@
   "tagId": "I2TlMv3VIZmshP2FVfjpAxTAT0Rsp12q4fyjsnQhPbcSmDag1W",
   "scripts": {
     "start": "webpack-dev-server --hot --inline --colors --progress --content-base src/ --history-api-fallback",
-    "errors": "webpack --display-error-details"
+    "test": "jest",
+    "test:w": "jest --watch"
   },
   "author": "",
   "license": "MIT",
@@ -33,14 +34,25 @@
   },
   "devDependencies": {
     "babel-core": "^6.5.1",
+    "babel-jest": "^15.0.0",
     "babel-loader": "^6.2.2",
-    "babel-preset-es2015": "^6.5.0",
-    "babel-preset-react": "^6.5.0",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "enzyme": "^2.4.1",
     "http-server": "^0.8.5",
+    "jest": "^15.1.1",
     "materialize-css": "^0.97.7",
     "materialize-loader": "^1.1.1",
+    "react-addons-test-utils": "^15.3.1",
     "react-hot-loader": "^1.3.0",
+    "react-test-renderer": "^15.3.1",
     "webpack": "^1.12.13",
     "webpack-dev-server": "^1.14.1"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(es6|js|json)$",
+    "moduleFileExtensions": ["js", "json", "es6"]
   }
 }
