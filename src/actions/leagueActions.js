@@ -3,7 +3,7 @@ import axios from "axios";
 // import leagues from '../data/leagues.json'
 
 const config = {
-  headers: {'X-Mashape-Key': 'I2TlMv3VIZmshP2FVfjpAxTAT0Rsp12q4fyjsnQhPbcSmDag1W'}
+  headers: {'X-Mashape-Key': ''}
 };
 
 
