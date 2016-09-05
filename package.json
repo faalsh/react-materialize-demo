@@ -17,6 +17,7 @@
     "classnames": "^2.2.5",
     "css-loader": "^0.23.1",
     "file-loader": "^0.9.0",
+    "jest-cli": "^15.1.1",
     "json-loader": "^0.5.4",
     "material-ui": "^0.15.4",
     "react": "latest",
@@ -53,6 +54,18 @@
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(es6|js|json)$",
-    "moduleFileExtensions": ["js", "json", "es6"]
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6",
+      "jsx"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|less)$": "<rootDir>/mock/styleMock.js",    
+      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/mock/fileMock.js"
+    }
   }
 }
