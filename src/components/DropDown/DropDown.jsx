@@ -39,7 +39,7 @@ class DropDown extends React.Component {
 
 				{
 				this.props.items.map((item)=>
-					<div>
+					<div key={item.name}>
 						<li ><NavLink onClick={this.props.onClick} to={item.to} className="orange-text"> {item.name}</NavLink></li>
 						<li className="divider"></li>
 					</div>
