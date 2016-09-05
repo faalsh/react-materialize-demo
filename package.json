@@ -64,8 +64,8 @@
       "/node_modules/"
     ],
     "moduleNameMapper": {
-      "^.+\\.(css|less)$": "<rootDir>/mock/styleMock.js",    
-      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/mock/fileMock.js"
+      "^.+\\.(css|less)$": "<rootDir>/src/mock/styleMock.js",    
+      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/src/mock/fileMock.js"
     }
   }
 }
