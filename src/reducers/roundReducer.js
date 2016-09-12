@@ -12,7 +12,7 @@ export default function reducer(state={
 }, action){
 	switch(action.type){
 		case types.FETCH_ROUNDS_PENDING: {
-			return {...state, fetching: true, league: action.meta.league, season: action.meta.season}
+			return {...state, fetching: true, league: action.meta.league, season: action.meta.season, rounds:[]}
 		}
 		case types.FETCH_ROUNDS_REJECTED: {
 			return {...state, fetching: false}

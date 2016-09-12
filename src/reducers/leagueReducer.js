@@ -10,7 +10,7 @@ export default function reducer(state={
 }, action){
 	switch(action.type){
 		case types.FETCH_LEAGUES_PENDING: {
-			return {...state, fetching: true}
+			return {...state, fetching: true, leagues: []}
 		}
 		case types.FETCH_LEAGUES_REJECTED: {
 			return {...state, fetching: false}

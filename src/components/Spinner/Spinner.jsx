@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import './Spinner.css'
 
 class Spinner extends Component{
-	constructor(props){
-		super(props);
-	}
 
 	render() {
 		return (

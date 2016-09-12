@@ -1,11 +1,9 @@
 import * as types from './actionTypes';
 import axios from "axios";
-// import leagues from '../data/leagues.json'
 
-const config = {
-  headers: {'X-Mashape-Key': ''}
-};
-
+function fetchWithAuth(url){
+	return axios.get(url, {headers:{'X-Mashape-Key': ''}})
+}
 
 export function fetchLeagues(){
 
@@ -13,7 +11,7 @@ export function fetchLeagues(){
 	return {
 
 		type: types.FETCH_LEAGUES,
-		payload: axios.get("https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues", config)
+		payload: fetchWithAuth("https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues")
 	}
 }
 
@@ -24,7 +22,7 @@ export function fetchSeasons(league){
 
 		type: types.FETCH_SEASONS,
 		meta: {league:league},
-		payload: axios.get("https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/"+league+"/seasons", config)
+		payload: fetchWithAuth("https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/"+league+"/seasons")
 	}
 }
 
@@ -36,6 +34,6 @@ export function fetchRounds(league, season){
 
 		type: types.FETCH_ROUNDS,
 		meta: {league: league, season:season},
-		payload: axios.get("https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/"+league+"/seasons/"+season+"/rounds", config)
+		payload: fetchWithAuth("https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/"+league+"/seasons/"+season+"/rounds")
 	}
 }

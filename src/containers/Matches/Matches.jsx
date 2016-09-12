@@ -24,78 +24,62 @@ class Matches extends React.Component {
 
     getLeagues() {
 
-        var items = [];
-
-        this.props.league.leagues.map((league) => {
-            items.push({name:league.name, to:{pathname: '/matches', query: {league: league.league_slug} }});
+        return this.props.league.leagues.map((league) => {
+            return {name:league.name, to:{pathname: '/matches', query: {league: league.league_slug} }}
         })
 
-        return items;
+
 
     } 
 
     getSeasons() {
 
-        const league = this.props.location.query.league
+        const {league} = this.props.location.query
 
-        var items = [];
-
-        this.props.season.seasons.map((season) => {
-            items.push({name:season.name, to:{pathname: '/matches', query: {league: league,season: season.season_slug} }});
+        return this.props.season.seasons.map((season) => {
+            return {name:season.name, to:{pathname: '/matches', query: {league: league,season: season.season_slug} }}
         })
-
-        return items;
 
     } 
 
     getRounds() {
 
-        const league = this.props.location.query.league
-        const season = this.props.location.query.season
+        const {league, season} = this.props.location.query
 
-        var items = [];
-
-        this.props.round.rounds.map((round) => {
-            items.push({name:round.name, to:{pathname: '/matches', query:{league: league, season:season, round:round.round_slug}}});
+        return this.props.round.rounds.map((round) => {
+            return {name:round.name, to:{pathname: '/matches', query:{league: league, season:season, round:round.round_slug}}}
         })
-        return items;
 
     } 
 
 
     renderSeasons(){
 
-        const league = this.props.location.query.league
-        if(league && this.props.season.league !== league) {
-            this.props.fetchSeasons(league)
-        } 
-
-        if(league) {
-            return (
-                <DropDown id="seasons" name="Seasons" items={this.getSeasons()} />
-
-            )
+        const {league} = this.props.location.query
+        const {fetchSeasons, season} = this.props
+        if(league && season.league !== league) {
+            fetchSeasons(league)
         }
+
+
+        return league ? <DropDown id="seasons" name="Seasons" items={this.getSeasons()} />: null
+
+        
 
     }
 
     renderRounds(){
 
-        const league = this.props.location.query.league
-        const season = this.props.location.query.season
+        const {league, season} = this.props.location.query
+        const {fetchRounds, round} = this.props
 
-
-        if(league && season && (this.props.round.league !== league || this.props.round.season !== season)) {
-            this.props.fetchRounds(league, season)
+        if(league && season && (round.league !== league || round.season !== season)) {
+            fetchRounds(league, season)
         } 
 
-        if(league && season) {
-            return (
-                <DropDown id="rounds" name="Rounds" items={this.getRounds()} />
+        return league && season ? <DropDown id="rounds" name="Rounds" items={this.getRounds()} />:null
 
-            )
-        }
-
+       
     }
 
 
