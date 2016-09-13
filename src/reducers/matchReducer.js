@@ -11,7 +11,6 @@ export default function reducer(state={
     matches: [],
     
 }, action){
-	console.log("matches action", action)
 	switch(action.type){
 		case types.FETCH_MATCHES_PENDING: {
 			return {...state, fetching: true, league: action.meta.league, season: action.meta.season, round: action.meta.round, matches:[]}

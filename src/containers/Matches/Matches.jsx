@@ -10,6 +10,8 @@ import matchesJSON from  '../../data/matches.json'
 
 class LeaguesDropDown extends React.Component {
 
+    
+
     render() {
 
 
@@ -32,6 +34,17 @@ class SeasonsDropDown extends React.Component {
         }
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+         const {query, seasons} = nextProps
+
+        if(seasons.fetched && query.league && seasons.league !== query.league ) {
+            console.log("should update", nextProps)
+            return true
+        } 
+            console.log("should not update", nextProps)
+            return false
+    }
+
     render() {
         const { seasons, query} = this.props
         const items = seasons.seasons.map((season) => {
@@ -49,9 +62,16 @@ class RoundsDropDown extends React.Component {
 
         const {query, rounds, fetchRounds} = nextProps
         
-        if(query.league && query.season && (rounds.league !== query.league || rounds.season !== query.season)) {
+        if(query.league && query.season && (rounds.league !== query.league || rounds.season !== query.season) ) {
             fetchRounds(query.league, query.season)
         }   
+    }
+    shouldComponentUpdate(nextProps, nextState) {
+        const {query, rounds} = nextProps
+        if(rounds.fetched && query.league && query.season && (rounds.league !== query.league || rounds.season !== query.season)) {
+            return true
+        } 
+            return false
     }
 
     render() {
@@ -79,8 +99,15 @@ class MatchesTable extends React.Component {
         }   
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        const {query, matches} = nextProps
+        if(matches.fetched && query.league && query.season && query.round && (matches.league !== query.league || matches.season !== query.season || matches.round !== query.round)) {
+            return true
+        } 
+            return false
+    }
+
     render() {
-        console.log(this.props)
         const {matches, query} = this.props
         const rows = matches.matches.map((match) => {
 
