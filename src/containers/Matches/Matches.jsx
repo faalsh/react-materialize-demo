@@ -35,14 +35,9 @@ class SeasonsDropDown extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-         const {query, seasons} = nextProps
 
-        if(seasons.fetched && query.league && seasons.league !== query.league ) {
-            console.log("should update", nextProps)
-            return true
-        } 
-            console.log("should not update", nextProps)
-            return false
+        return nextProps.seasons.fetched 
+       
     }
 
     render() {
@@ -67,11 +62,9 @@ class RoundsDropDown extends React.Component {
         }   
     }
     shouldComponentUpdate(nextProps, nextState) {
-        const {query, rounds} = nextProps
-        if(rounds.fetched && query.league && query.season && (rounds.league !== query.league || rounds.season !== query.season)) {
-            return true
-        } 
-            return false
+        
+        return nextProps.rounds.fetched
+
     }
 
     render() {
@@ -100,33 +93,28 @@ class MatchesTable extends React.Component {
     }
 
     shouldComponentUpdate(nextProps, nextState) {
-        const {query, matches} = nextProps
-        if(matches.fetched && query.league && query.season && query.round && (matches.league !== query.league || matches.season !== query.season || matches.round !== query.round)) {
-            return true
-        } 
-            return false
+        
+        return nextProps.matches.fetched
     }
 
     render() {
         const {matches, query} = this.props
         const rows = matches.matches.map((match) => {
 
-            const scoreStyle = {
-                padding: "5px",
-                margin: "2px"
-            }
 
             return (
-                <div key={match.identifier} style={{border: "1px solid", padding:"10px", textAlign: "center", margin:5, backgroundColor: "#eaeaea"}}>
-                    <span style={{paddingRight: 5, fontWeight: "bold"}}>{match.home.team}</span> 
-                    <span className="blue white-text" style={scoreStyle}>{match.home.goals}</span> 
-                    <span className="blue white-text"  style={scoreStyle}>{match.away.goals}</span> 
-                    <span style={{paddingLeft: 5, fontWeight: "bold"}}>{match.away.team}</span>
+                <div key={match.identifier} style={{padding:"10px", textAlign: "center", display:"table-row", margin:"5px", height:"30px"}} className="card grey lighten-3
+">
+                    <div style={{paddingRight: 5, fontWeight: "bold", display:"table-cell", textAlign: "right", verticalAlign: "middle", paddingRight: "15px"}}>{match.home.team}</div> 
+                    <div className="blue white-text" style={{display:"table-cell"}}>{match.home.goals >= 0 ? match.home.goals:'-'}</div> 
+                    <div className="blue white-text" style={{display:"table-cell"}}>:</div> 
+                    <div className="blue white-text"  style={{display:"table-cell"}}>{match.away.goals >=0 ? match.away.goals:'-'}</div> 
+                    <div style={{paddingLeft: 5, fontWeight: "bold", display:"table-cell", textAlign:"left", verticalAlign: "middle", paddingLeft: "15px"}}>{match.away.team}</div>
                 </div>
             )
         })
 
-        return query.league && query.season && query.round ? <div style={{marginTop:"50px"}}>{rows}</div>:null
+        return query.league && query.season && query.round ? <div style={{marginTop:"50px", display:"table", width: "100%"}}>{rows}</div>:null
     }
 }
 
@@ -136,7 +124,7 @@ class MatchesTable extends React.Component {
 
 class Matches extends React.Component {
 
-    componentWillMount() {
+    componentDidMount() {
       this.props.fetchLeagues() 
     }
 

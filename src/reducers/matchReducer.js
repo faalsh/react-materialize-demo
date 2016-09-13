@@ -16,12 +16,18 @@ export default function reducer(state={
 			return {...state, fetching: true, league: action.meta.league, season: action.meta.season, round: action.meta.round, matches:[]}
 		}
 		case types.FETCH_MATCHES_REJECTED: {
-			return {...state, fetching: false}
+			return {...state, fetching: false} 
 		}
 		case types.FETCH_MATCHES_FULFILLED: {
 			return {...state, fetching: false, fetched: true, league: action.meta.league, 
 				season: action.meta.season, round: action.meta.round, matches: action.payload.data.data.matches}
 		}
+		case types.FETCH_SEASONS_FULFILLED:
+		case types.FETCH_LEAGUES_FULFILLED:
+		case types.FETCH_ROUNDS_FULFILLED: {
+			return {...state, fetched: false, league: null, season: null, round:null, matches: []}
+		}
+		
 		default: 
 			return state;
 	} 

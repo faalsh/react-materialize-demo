@@ -19,6 +19,9 @@ export default function reducer(state={
 		case types.FETCH_SEASONS_FULFILLED: {
 			return {...state, fetching: false, fetched: true, league: action.meta.league, seasons: action.payload.data.data.seasons}
 		}
+		case types.FETCH_LEAGUES_FULFILLED: {
+			return {...state, fetched: false, league:null, seasons: []}
+		}
 		default: 
 			return state;
 	} 
