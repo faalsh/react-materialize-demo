@@ -103,7 +103,7 @@ class MatchesTable extends React.Component {
 
 
             return (
-                <div key={match.identifier} style={{padding:"10px", textAlign: "center", display:"table-row", margin:"5px", height:"30px"}} className="card grey lighten-3
+                <div key={match.identifier} style={{padding:"10px", textAlign: "center", display:"table-row", margin:"5px", height:"30px"}} className="card blue lighten-3
 ">
                     <div style={{paddingRight: 5, fontWeight: "bold", display:"table-cell", textAlign: "right", verticalAlign: "middle", paddingRight: "15px"}}>{match.home.team}</div> 
                     <div className="blue white-text" style={{display:"table-cell"}}>{match.home.goals >= 0 ? match.home.goals:'-'}</div> 
