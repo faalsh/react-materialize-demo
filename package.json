@@ -5,9 +5,10 @@
   "main": "index.js",
   "tagId": "I2TlMv3VIZmshP2FVfjpAxTAT0Rsp12q4fyjsnQhPbcSmDag1W",
   "scripts": {
-    "start": "webpack-dev-server --hot --inline --colors --progress --content-base src/ --history-api-fallback",
+    "start": "node server.js",
+    "dev": "webpack-dev-server --hot --inline --colors --progress --content-base src/ --history-api-fallback",
     "test": "jest",
-    "test:w": "jest --watch", 
+    "test:w": "jest --watch",
     "build": "webpack"
   },
   "author": "",
@@ -17,6 +18,8 @@
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "classnames": "^2.2.5",
     "css-loader": "^0.23.1",
+    "express": "^4.14.0",
+    "express-history-api-fallback": "^2.0.0",
     "file-loader": "^0.9.0",
     "jest-cli": "^15.1.1",
     "json-loader": "^0.5.4",
@@ -31,7 +34,8 @@
     "redux-logger": "^2.6.1",
     "redux-promise-middleware": "^4.0.0",
     "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7"
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.13"
   },
   "devDependencies": {
     "babel-core": "^6.5.1",
@@ -48,8 +52,10 @@
     "react-addons-test-utils": "^15.3.1",
     "react-hot-loader": "^1.3.0",
     "react-test-renderer": "^15.3.1",
-    "webpack": "^1.12.13",
     "webpack-dev-server": "^1.14.1"
+  },
+  "engines": {
+    "node": "4.1.1"
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
@@ -64,7 +70,7 @@
       "/node_modules/"
     ],
     "moduleNameMapper": {
-      "^.+\\.(css|less)$": "<rootDir>/src/mock/styleMock.js",    
+      "^.+\\.(css|less)$": "<rootDir>/src/mock/styleMock.js",
       "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/src/mock/fileMock.js"
     }
   }
