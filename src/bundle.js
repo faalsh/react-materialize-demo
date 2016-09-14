@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8cdd40f772698a64f702"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9f3af297ab5c89f5ff8a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -64927,7 +64927,7 @@
 
 	                return _react2.default.createElement(
 	                    'div',
-	                    { key: match.identifier, style: { padding: "10px", textAlign: "center", display: "table-row", margin: "5px", height: "30px" }, className: 'card blue lighten-3\n' },
+	                    { key: match.identifier, style: { padding: "10px", textAlign: "center", display: "table-row", margin: "5px", height: "30px" }, className: 'card red lighten-3\n' },
 	                    _react2.default.createElement(
 	                        'div',
 	                        { style: _defineProperty({ paddingRight: 5, fontWeight: "bold", display: "table-cell", textAlign: "right", verticalAlign: "middle" }, 'paddingRight', "15px") },
