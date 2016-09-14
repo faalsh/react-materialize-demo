@@ -20,6 +20,11 @@ export default function reducer(state={
 		case types.FETCH_ROUNDS_FULFILLED: {
 			return {...state, fetching: false, fetched: true, league: action.meta.league, season: action.meta.season, rounds: action.payload.data.data.rounds}
 		}
+		case types.FETCH_LEAGUES_FULFILLED:
+		case types.FETCH_SEASONS_FULFILLED: {
+			return {...state,  fetched: false, league: null, season:null,  rounds: []}
+		}
+
 		default: 
 			return state;
 	} 

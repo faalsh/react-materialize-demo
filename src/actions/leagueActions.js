@@ -1,8 +1,34 @@
 import * as types from './actionTypes';
 import axios from "axios";
+import leagues from '../data/leagues.json'
+import seasons from '../data/seasons.json'
+import rounds from '../data/rounds.json'
+import matches from '../data/matches.json'
+
+const DEV = true;
 
 function fetchWithAuth(url){
-	return axios.get(url, {headers:{'X-Mashape-Key': ''}})
+
+	if(!DEV) {
+		return axios.get(url, {headers:{'X-Mashape-Key': ''}})
+	} else if (url.indexOf('matches') > 0 ) {
+		return new Promise((resolve, reject) => {
+			resolve({data:matches})
+		})
+	} else if (url.indexOf('rounds') > 0 ) {
+		return new Promise((resolve, reject) => {
+			resolve({data:rounds})
+		})
+	} else if (url.indexOf('seasons') > 0 ) {
+		return new Promise((resolve, reject) => {
+			resolve({data:seasons})
+		})
+	} else {
+		return new Promise((resolve, reject) => {
+			resolve({data:leagues})
+		})
+	}
+	
 }
 
 export function fetchLeagues(){
