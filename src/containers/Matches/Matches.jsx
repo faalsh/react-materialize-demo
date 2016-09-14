@@ -13,13 +13,14 @@ class LeaguesDropDown extends React.Component {
     
 
     render() {
+        const {selectedName} = this.props
 
 
         const items = this.props.leagues.leagues.map((league) => {
              return {name:league.name, to:{pathname: '/matches', query: {league: league.league_slug} }}
          })
 
-        return <DropDown id="leagues" name="Leagues" items={items} />;
+        return <DropDown id="leagues" name="Leagues" items={items} selectedName={selectedName}/>;
     }
 }
 
@@ -46,7 +47,7 @@ class SeasonsDropDown extends React.Component {
              return {name:season.name, to:{pathname: '/matches', query: {league: query.league,season: season.season_slug} }}
          })
 
-        return query.league ? <DropDown id="seasons" name="Seasons" items={items} />: null;
+        return query.league ? <DropDown id="seasons" name="Seasons" items={items} selectedName={query.season}/>: null;
     }
 }
 
@@ -75,7 +76,7 @@ class RoundsDropDown extends React.Component {
             return {name:round.name, to:{pathname: '/matches', query:{league: query.league, season:query.season, round:round.round_slug}}}
         })
 
-        return query.league && query.season ? <DropDown id="rounds" name="Rounds" items={items} />:null
+        return query.league && query.season ? <DropDown id="rounds" name="Rounds" items={items} selectedName={query.round} />:null
     }
 }
 
@@ -139,7 +140,7 @@ class Matches extends React.Component {
             <div className="row">
                 { fetching ? <Spinner />:null }
                 <div className="col s12 filters">
-                    <LeaguesDropDown leagues={leagues} /> 
+                    <LeaguesDropDown leagues={leagues} selectedName={query.league} /> 
                     <SeasonsDropDown fetchSeasons={fetchSeasons}  seasons={seasons} query={query} />
                     <RoundsDropDown fetchRounds={fetchRounds} rounds={rounds} query={query} />
                     <MatchesTable fetchMatches={fetchMatches} matches={matches} query={query}/>

@@ -21,6 +21,8 @@ class DropDown extends React.Component {
     
     render() {
 
+      const {selectedName} = this.props
+
 
       var className = classNames({
         'dropdown-button': true,
@@ -32,7 +34,7 @@ class DropDown extends React.Component {
         return (
         	 <span>
 
-				<a className={className} href='#' data-activates={this.props.id} data-constrainwidth="false">{this.props.name}</a>
+				<a className={className} href='#' data-activates={this.props.id} data-constrainwidth="false">{selectedName? selectedName:this.props.name}</a>
 
 				<ul id={this.props.id} className='dropdown-content'> 
 
