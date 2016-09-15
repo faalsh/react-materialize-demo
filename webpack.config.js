@@ -71,7 +71,7 @@ module.exports = {
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: true }
+      compress: { warnings: false }
     }),
     new webpack.DefinePlugin({
       'process.env': {
