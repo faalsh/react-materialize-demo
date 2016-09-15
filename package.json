@@ -14,10 +14,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.13.1",
-    "classnames": "^2.2.5",
     "express": "^4.14.0",
     "express-history-api-fallback": "^2.0.0",
+    "webpack": "^1.12.13"
+  },
+  "devDependencies": {
     "material-ui": "^0.15.4",
     "react": "latest",
     "react-dom": "latest",
@@ -28,9 +29,8 @@
     "redux": "^3.5.2",
     "redux-logger": "^2.6.1",
     "redux-promise-middleware": "^4.0.0",
-    "webpack": "^1.12.13"
-  },
-  "devDependencies": {
+    "axios": "^0.13.1",
+    "classnames": "^2.2.5",
     "css-loader": "^0.23.1",
     "jest-cli": "^15.1.1",
     "json-loader": "^0.5.4",
