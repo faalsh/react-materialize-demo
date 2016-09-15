@@ -9,8 +9,6 @@ export default class extends React.Component {
   componentDidMount(){
 
     $(".button-collapse").sideNav();
-
-
   }
 
   render() {
