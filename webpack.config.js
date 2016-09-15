@@ -62,20 +62,23 @@ module.exports = {
     ]
   },
   plugins: [
-        new webpack.ProvidePlugin({
-            $: "jquery",
+    new webpack.ProvidePlugin({
+      $: "jquery",
       jQuery: "jquery",
       "window.jQuery": "jquery",
       "root.jQuery": "jquery",
       Hammer: "hammerjs/hammer"
-        }),
-
-        
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false }
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: true }
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
     })
-        ]
+  ]
 };
 
 // new webpack.ProvidePlugin({
