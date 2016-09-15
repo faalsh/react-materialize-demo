@@ -10,6 +10,7 @@ module.exports = {
     path: path.join(__dirname, 'src'),
     filename: 'bundle.js'
   },
+  devTool: 'source-map',
   module: {
     loaders: [
       {
@@ -70,7 +71,10 @@ module.exports = {
         }),
 
         
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false }
+    })
         ]
 };
 
