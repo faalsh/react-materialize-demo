@@ -5,6 +5,7 @@
   "main": "index.js",
   "tagId": "I2TlMv3VIZmshP2FVfjpAxTAT0Rsp12q4fyjsnQhPbcSmDag1W",
   "scripts": {
+    "postinstall": "webpack",
     "start": "node server.js",
     "dev": "webpack-dev-server --hot --inline --colors --progress --content-base src/ --history-api-fallback",
     "test": "jest",

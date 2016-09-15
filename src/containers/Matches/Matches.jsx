@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {fetchLeagues, fetchSeasons, fetchRounds, fetchMatches} from '../../actions/leagueActions'
-import Spinner from '../../components/Spinner/Spinner.jsx'
+// import Spinner from '../../components/Spinner/Spinner.jsx'
 import DropDown from '../../components/DropDown/DropDown.jsx'
 import './Matches.css'
 import matchesJSON from  '../../data/matches.json'
@@ -138,7 +138,6 @@ class Matches extends React.Component {
     return (
 
             <div className="row">
-                { fetching ? <Spinner />:null }
                 <div className="col s12 filters">
                     <LeaguesDropDown leagues={leagues} selectedName={query.league} /> 
                     <SeasonsDropDown fetchSeasons={fetchSeasons}  seasons={seasons} query={query} />
