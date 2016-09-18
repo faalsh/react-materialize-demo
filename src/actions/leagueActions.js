@@ -5,12 +5,12 @@ import seasons from '../data/seasons.json'
 import rounds from '../data/rounds.json'
 import matches from '../data/matches.json'
 
-const DEV = false;
+const DEV = true;
 
 function fetchWithAuth(url){
 
 	if(!DEV) {
-		return axios.get(url, {headers:{'X-Mashape-Key': 'I2TlMv3VIZmshP2FVfjpAxTAT0Rsp12q4fyjsnQhPbcSmDag1W'}})
+		return axios.get(url, {headers:{'X-Mashape-Key': ''}})
 	} else if (url.indexOf('matches') > 0 ) {
 		return new Promise((resolve, reject) => {
 			resolve({data:matches})
