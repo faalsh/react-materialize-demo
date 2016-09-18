@@ -1,7 +1,6 @@
 import React from 'react'
 import NavLink from '../../components/NavLink/NavLink.jsx'
 import MenuItems from '../../components/MenuItems/MenuItems.jsx'
-import 'materialize-css/dist/js/materialize.js';
 
 export default class extends React.Component {
 

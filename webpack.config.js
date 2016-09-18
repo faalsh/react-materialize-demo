@@ -62,13 +62,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery",
-      "root.jQuery": "jquery",
-      Hammer: "hammerjs/hammer"
-    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false }
@@ -80,9 +73,3 @@ module.exports = {
     })
   ]
 };
-
-// new webpack.ProvidePlugin({
-//     $: "jquery",
-//     jQuery: "jquery",
-//     "window.jQuery": "jquery"
-// })
