@@ -8,7 +8,7 @@
     "postinstall": "webpack",
     "start": "node server.js",
     "dev": "node devServer.js",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:w": "jest --watch",
     "build": "webpack"
   },
@@ -56,6 +56,8 @@
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(es6|js|json)$",
+    "collectCoverage": true,
+    "coverageFormats": ["json", "html"],
     "moduleFileExtensions": [
       "js",
       "json",

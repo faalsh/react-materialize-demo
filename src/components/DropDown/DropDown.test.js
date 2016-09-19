@@ -24,6 +24,10 @@ describe('<DropDown>', () =>
 
 	it('should be disabled if list of items is empty', () => {
 		expect(shallow(<DropDown id="test" items={emptyItems} />).find('a.grey').length).toBe(1)
+	}),
+
+	it('should render selected name', () => {
+		expect(shallow(<DropDown id="test" items={emptyItems} selectedName="selected" />).find('a.dropdown-button').text()).toBe("selected")
 	})
 );
 
