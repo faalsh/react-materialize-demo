@@ -4,7 +4,7 @@ import {bindActionCreators} from 'redux'
 import {fetchLeagues, fetchSeasons, fetchRounds, fetchMatches} from '../../actions/leagueActions'
 // import Spinner from '../../components/Spinner/Spinner.jsx'
 import DropDown from '../../components/DropDown/DropDown.jsx'
-import './Matches.css'
+// import './Matches.css'
 import matchesJSON from  '../../data/matches.json'
 
 
@@ -137,13 +137,19 @@ class Matches extends React.Component {
 
     return (
 
-            <div className="row">
+            <div className="container">
+            <div className="row valign-wrapper">
                 <div className="col s12 filters">
                     <LeaguesDropDown leagues={leagues} selectedName={query.league} /> 
                     <SeasonsDropDown fetchSeasons={fetchSeasons}  seasons={seasons} query={query} />
                     <RoundsDropDown fetchRounds={fetchRounds} rounds={rounds} query={query} />
-                    <MatchesTable fetchMatches={fetchMatches} matches={matches} query={query}/>
+                    
                 </div>
+            </div>
+
+            <div className="row">
+            <MatchesTable fetchMatches={fetchMatches} matches={matches} query={query}/>
+            </div>
             </div>
 
     	)

@@ -14,7 +14,8 @@ import {fetchSeasons} from './actions/leagueActions';
 
 import Home from './containers/Home/Home.jsx'
 import './index.css'
-// import 'materialize-loader'
+// import 'materialize-loader' 
+import './favicon.ico'
 
 
 render((
