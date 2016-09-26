@@ -82,7 +82,6 @@ var syncSeasons = function(league_slug, updateAll){
 
 var syncRounds = function(league_slug, season_slug, updateAll){
 	connector.fetchRounds(league_slug, season_slug).then(function(rounds){
-		console.log("rounds",rounds)
 		rounds.map(function(round){
 			round.league_slug = league_slug;
 			round.season_slug = season_slug;

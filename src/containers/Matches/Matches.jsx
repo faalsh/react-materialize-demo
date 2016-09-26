@@ -44,9 +44,12 @@ class Matches extends React.Component {
         
     }
     componentWillReceiveProps(nextProps) {
-        const {league} = nextProps.location.query
+        const {league, season, round} = nextProps.location.query
         if (league) {
             this.getSeasons(league);
+        }
+        if(league && season) {
+            this.getRounds(league, season)
         }     
     }
 
@@ -76,11 +79,26 @@ class Matches extends React.Component {
         });
     }
 
+    getRounds(league, season) {
+        var roundsRef = firebase.database().ref('/rounds/');
+        roundsRef.orderByChild("league_slug").equalTo(league).on('value', (snapshot) => {
+            var rounds = [];
+            snapshot.forEach((round) => {
+                if(round.val().season_slug === season) {
+                    rounds.push({name: round.val().name, to:{pathname: '/matches', query: {league:league, season:season, round: round.val().round_slug}}})
+                }   
+            });
+            this.setState({
+                rounds: rounds
+            });
+        });
+    }
+
 
 	render() {
 
         const {leagues, seasons, rounds, matches} = this.state;
-        const {league} = this.props.location.query
+        const {league, season, round} = this.props.location.query
 
     return (
 
@@ -89,6 +107,7 @@ class Matches extends React.Component {
                 <div className="col s12 filters">
                     <LeaguesDropDown leagues={leagues} /> 
                     <SeasonsDropDown seasons={seasons} league={league}/>
+                    <RoundsDropDown rounds={rounds} league={league} season={season} />
                     
                 </div>
             </div>
