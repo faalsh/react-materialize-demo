@@ -10,6 +10,9 @@ exports.fetchLeagues = function(){
   return fetchWithAuth("https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues")
             .then(function(response){
                 return response.data.data.leagues
+            })
+            .catch(function(error) {
+              console.log(error);
             });
 }
 
@@ -17,7 +20,10 @@ exports.fetchSeasons = function(league){
  return fetchWithAuth("https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/"+league+"/seasons")
            .then(function(response){ 
                   return response.data.data.seasons
-              });
+              })
+            .catch(function(error) {
+              console.log(error);
+            });
 }
 
 
@@ -26,7 +32,10 @@ exports.fetchRounds = function(league, season){
   return fetchWithAuth("https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/"+league+"/seasons/"+season+"/rounds")
           .then(function(response){ 
                   return response.data.data.rounds
-              });
+              })
+            .catch(function(error) {
+              console.log(error);
+            });
 }
 
 exports.fetchMatches = function(league, season, round){
@@ -34,7 +43,10 @@ exports.fetchMatches = function(league, season, round){
   return fetchWithAuth("https://sportsop-soccer-sports-open-data-v1.p.mashape.com/v1/leagues/"+league+"/seasons/"+season+"/rounds/"+round+"/matches")
           .then(function(response){ 
                   return response.data.data.matches
-              });
+              })
+            .catch(function(error) {
+              console.log(error);
+            });
 }
 
 
