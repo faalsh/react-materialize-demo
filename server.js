@@ -2,6 +2,8 @@ var express = require('express');
 var fallback = require('express-history-api-fallback');
 var favicon = require('serve-favicon');
 var sync = require('./sync');
+var connector = require('./connector')
+
 
 
 
@@ -26,6 +28,17 @@ app.get('/sync', function(req,res){
 		console.log(e);
 	}
 	res.send('sync completed');
+})
+
+app.get('/ping', function(req,res){
+	try {
+			connector.fetchLeagues().then(function(matches){
+				res.send(matches)
+			})
+	} catch(e) {
+		console.log(e);
+	}
+	
 })
 
 app.use(express.static(root));
